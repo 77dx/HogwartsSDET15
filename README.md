@@ -14,4 +14,9 @@
     cd venv/bin
     source activate
     deactivate  退出虚拟环境
+3.selenium 浏览器复用启动命令
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
 
+4.获取当前文件所在的绝对路径：os.path.abspath(__file__)
+5.获取当前文件的上一层目录的绝对路径：os.path.dirname(os.path.abspath(__file__))
+6.获取项目的跟路径：root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
