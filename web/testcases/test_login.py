@@ -3,9 +3,8 @@ import allure
 from web.web_page.index_page import IndexPage
 
 user_list = [
-    {"account": "13366666666", "password": "test@123456"},
-    {"account": "13311111111", "password": "test@123456"},
-    {"account": "13377777777", "password": "test@123456"}
+    {"account": "17688968877", "password": "Cathy8877"},
+    {"account": "18740778077", "password": "Cathy8877"}
 ]
 class TestLogin:
 
