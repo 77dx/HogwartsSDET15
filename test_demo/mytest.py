@@ -120,4 +120,15 @@ def parse(fileName, steps):
 
 import random
 
-print(random.randint(1,99))
+# print(random.randint(1,99))
+# import sys
+# print(sys.argv)
+#
+# import argparse
+# print(argparse)
+
+
+list_num = [1,2,3,4,5]
+# print(max(list_num))
+if not list_num:
+    print(list_num)
