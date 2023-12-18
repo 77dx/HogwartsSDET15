@@ -1,0 +1,5 @@
+2023-12-13 18:15:28,140 - login_page.py - login_page - input_account -20 - INFO - 输入用户名：18740778077
+2023-12-13 18:15:28,492 - login_page.py - login_page - input_password -31 - INFO - 输入密码：Cathy8877
+2023-12-13 18:15:28,637 - login_page.py - login_page - click_submit_btn -41 - INFO - 点击登录按钮
+2023-12-13 18:15:28,774 - login_page.py - login_page - assert_login_success -51 - INFO - 进行登录断言，断言结果下回再见
+2023-12-13 18:15:36,091 - test_login.py - test_login - test_login_success_pre -40 - INFO - 点击登录按钮后，进行截图

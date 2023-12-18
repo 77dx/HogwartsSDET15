@@ -86,7 +86,6 @@ file_path = os.path.join(root_dir, 'web/resource/img/aa.jpeg')
 # print(file_path)
 f = root_dir + '/web/resource/img/aa.jpeg'
 # print(f)
-import pyautogui as ui
 
 # ui.write(f)
 # ui.typewrite("hello")
@@ -131,4 +130,10 @@ import random
 list_num = [1,2,3,4,5]
 # print(max(list_num))
 if not list_num:
-    print(list_num)
+    pass
+
+if __name__ == '__main__':
+    for i in range(1,10):
+        print(i)
+
+

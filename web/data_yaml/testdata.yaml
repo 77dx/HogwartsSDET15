@@ -1,0 +1,15 @@
+prod_users:
+  cathy:
+    username: 18740778077
+    password: Cathy8877
+  bad_user:
+    username: 17000000000
+    password: 123456
+
+pre_users:
+  user1:
+    username: 13366666666
+    password: test@123456
+  user2:
+    username: 13311111111
+    password: test@123456

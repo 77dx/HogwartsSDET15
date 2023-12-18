@@ -1,6 +1,4 @@
-
 import pytest
-
 name = "conftest"
 
 @pytest.fixture(autouse=False, scope='module',params=['tom','jane'])     # 可获取yield返回值, autouse=True默认所有都执行

@@ -1,0 +1,25 @@
+# 生产url
+prod_url: "https://wanshifu.com"
+
+# 测试url
+pre_url: "https://test-wanshifu.com"
+
+
+# mysql
+mysql:
+  db: testcase_manager
+  host: rm-bp1826c80crnvve16do.mysql.rds.aliyuncs.com
+  port: 3306
+  user: cathy
+  password: Cathy8877
+
+
+redis:
+  db: 0
+  host: 47.119.25.235
+  port: 6379
+
+
+
+
+

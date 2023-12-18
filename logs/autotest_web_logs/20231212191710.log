@@ -1,0 +1,6 @@
+2023-12-12 19:17:30,634 - login_page.py - login_page - input_account -20 - INFO - 输入用户名：13366666666
+2023-12-12 19:17:31,020 - login_page.py - login_page - input_password -31 - INFO - 输入密码：test@123456
+2023-12-12 19:17:31,185 - login_page.py - login_page - click_submit_btn -41 - INFO - 点击登录按钮
+2023-12-12 19:17:31,322 - login_page.py - login_page - assert_login_success -51 - INFO - 进行登录断言，断言结果下回再见
+2023-12-12 19:17:39,346 - test_login.py - test_login - test_login_success_pre -40 - INFO - 点击登录按钮后，进行截图
+2023-12-12 19:17:54,445 - pub_order_page.py - pub_order_page - pub_category_jiaju -104 - INFO - 这是确认切换类目的弹窗:False

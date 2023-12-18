@@ -1,0 +1,8 @@
+2023-12-13 17:10:00,368 - login_page.py - login_page - input_account -20 - INFO - 输入用户名：13366666666
+2023-12-13 17:10:00,752 - login_page.py - login_page - input_password -31 - INFO - 输入密码：test@123456
+2023-12-13 17:10:00,895 - login_page.py - login_page - click_submit_btn -41 - INFO - 点击登录按钮
+2023-12-13 17:10:01,030 - login_page.py - login_page - assert_login_success -51 - INFO - 进行登录断言，断言结果下回再见
+2023-12-13 17:10:08,539 - test_login.py - test_login - test_login_success_pre -40 - INFO - 点击登录按钮后，进行截图
+2023-12-13 17:10:23,028 - pub_order_page.py - pub_order_page - pub_category_jiaju -104 - INFO - 这是确认切换类目的弹窗:False
+2023-12-13 17:10:28,560 - pub_order_page.py - pub_order_page - pub_category_jiaju -124 - INFO - 第一列商品数量有：1
+2023-12-13 17:10:28,745 - pub_order_page.py - pub_order_page - pub_category_jiaju -128 - INFO - 第二列商品数量有：10

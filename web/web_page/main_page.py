@@ -3,15 +3,24 @@ from time import sleep
 
 from web.web_page.order_list_page import OrderListPage
 from web.web_page.pub_order_page import PubOrderPage
+from common.log import log
 
 
 class MainPage(BasePage):
 
-    # 发布订单
-    # @DecoPopAd(driver)
+    # 点击发布订单
     def publish_order_button(self, driver):
+        # 处理弹窗广告
+        # try:
+        #     ele_pop = self.find(driver, "xpath", '//div[@class="close-icon"]')
+        #     if ele_pop:
+        #         ele_pop.click()
+        # except Exception as e:
+        #     log.error(e)
+        # sleep(2)
+
         # 点击发布订单按钮
-        self.parse_yaml(driver, 'main_page.yaml','publish_order')
+        self.find(driver, "xpath", '//a[@href="/placeorder"]').click()
         sleep(2)
         return PubOrderPage()
 

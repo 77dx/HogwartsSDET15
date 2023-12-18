@@ -1,0 +1,4 @@
+INFO     web自动化测试:login_page.py:20 输入用户名：17000000000
+INFO     web自动化测试:login_page.py:31 输入密码：123456
+INFO     web自动化测试:login_page.py:41 点击登录按钮
+INFO     web自动化测试:login_page.py:51 进行登录断言，断言结果下回再见

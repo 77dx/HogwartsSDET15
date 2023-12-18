@@ -1,7 +1,11 @@
+import datetime
+import os
+
 from selenium.common import ElementNotVisibleException, WebDriverException, StaleElementReferenceException
 from selenium.webdriver import Keys
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
+from common.tools import get_img_path
 import time
 import yaml
 
@@ -26,6 +30,7 @@ class BasePage():
                     result = driver.find_element(By.XPATH, locator_expression)
                 elif locate_type == "css" or locate_type == "CSS":
                     result = driver.find_element(By.CSS_SELECTOR, locator_expression)
+            print(result)
             return result
         except Exception as e:
             print(f'没有定位到元素{e}')
@@ -50,7 +55,7 @@ class BasePage():
                 # self.element_fill_value(step["by"], step["locator"], step["content"])
     # 动态导入，还未实现
     # module_name = step.get("gotoPage")
-    # importlib.import_module(module_name, page="web.web_page")
+    # importlib.import_module(module_name, base="web.web_page")
     # return eval(module_name)(self.driver)
 
     def srolled_element_into_view(self, driver, locate_type, locator_expression):
@@ -151,6 +156,22 @@ class BasePage():
         except Exception:
             raise Exception("元素填值失败")
         return True
+
+    def element_screenshot(self, driver, locate_type, locator_expression):
+        """
+        元素截图
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        :return:
+        """
+        ele_name = datetime.datetime.now().strftime("%Y-%m-%d:%H-%M-%s") + ".png"
+        ele_img_dir_path = get_img_path(ele_name, True, ["web", "screenshot"])
+        if not os.path.exists(ele_img_dir_path):
+            os.makedirs(ele_img_dir_path)
+        ele_path = ele_img_dir_path + ele_name
+        self.find(driver, locate_type,locator_expression).screenshot(ele_path)
+        return ele_path
 
 
 
