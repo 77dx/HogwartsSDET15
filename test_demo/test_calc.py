@@ -1,7 +1,7 @@
 import pytest
 import yaml
 
-from pythoncode.calculator import Calculator
+from test_demo.calculator import Calculator
 
 
 def get_datas():

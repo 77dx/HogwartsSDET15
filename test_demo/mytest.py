@@ -132,8 +132,168 @@ list_num = [1,2,3,4,5]
 if not list_num:
     pass
 
+# 2,3,5,7,11,13,17,19,34
+def get_sushu():
+    r = []
+    for i in range(2,101):
+        if i == 2:
+            r.append(i)
+        else:
+            if 0 not in [i%j for j in range(2,i)]:
+                r.append(i)
+    print(r)
+
+# a=【‘aasc’，‘bszc’，‘ab’】找出里面有c的，都改成we
+def change_str():
+
+    a = ['aasc','bszc','ab']
+
+    for i in range(0,len(a)):
+        if 'c' in a[i]:
+            print(id(a[i]))
+            a[i] = a[i].replace('c','we')
+            print(id(a[i]))
+
+    print(a)
+
+'''
+输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+解释：需要合并 [1,2,3] 和 [2,5,6] 。
+合并结果是 [1,2,2,3,5,6] ，其中斜体加粗标注的为 nums1 中的元素。
+'''
+def merge(nums1, m, nums2, n):
+    for i in range(m+n):
+        for j in range(n):
+            if nums2[j]>nums1[i] and nums2[j]==nums1[i+1]:
+                nums1.insert(i+2,nums2[j])
+            elif nums2[j]>nums1[i] and nums2[j]<nums1[i+1]:
+                nums1.insert(i+1, nums2[j])
+            elif i>=m and nums2[j]>=nums1[i]:
+                nums1[i] = nums2[j]
+
+
+    print(nums1)
+
+'''
+给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+示例 1：
+输入：nums = [3,2,2,3], val = 3
+输出：2, nums = [2,2]
+解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。
+示例 2：
+输入：nums = [0,1,2,2,3,0,4,2], val = 2
+输出：5, nums = [0,1,3,0,4]
+解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
+'''
+def removeElement(nums, val: int) -> int:
+    '''
+    利用直接删除数组元素的方法行不通，一定会数组越界，因为在for循环时，数组的长度时固定的，即循环过程中数组实际长度变小，
+    循环的长度还是原数据的长度，导致后面的取值越界。
+    看了官方的答案一是数组元素替换的方法，设置两个指针，一个是去除数据后的指针left，另一个是循环数组的指针right，
+    判断如果当前元素与比较数组不相同时，给left指针赋值，这样left的指针是连续的，且数据都是与比较数据不相同的，
+    整个过程只是将元素交换位置，而最后几位数据还是原数据。
+    但是过程中会有重复赋值的动作。
+    :param nums:
+    :param val:
+    :return:
+    '''
+    left = 0
+    for right in range(0, len(nums)):
+        if nums[right] != val:
+            nums[left] = nums[right]
+            left += 1
+    return left
+
+def removeElement2(nums, val: int) -> int:
+    '''
+    第二种方法
+    :param nums:
+    :param val:
+    :return:
+    '''
+    left = 0
+    right = len(nums)
+    while left < right:
+        if nums[left] == val:
+            nums[left] = nums[right-1]
+            right -= 1
+        else:
+            left += 1
+    print(left)
+
+
+
+'''
+合并两个有序数组
+给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
+注意：最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。
+示例 1：
+
+输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+解释：需要合并 [1,2,3] 和 [2,5,6] 。
+合并结果是 [1,2,2,3,5,6] ，其中斜体加粗标注的为 nums1 中的元素。
+示例 2：
+
+输入：nums1 = [1], m = 1, nums2 = [], n = 0
+输出：[1]
+解释：需要合并 [1] 和 [] 。
+合并结果是 [1] 。
+示例 3：
+
+输入：nums1 = [0], m = 0, nums2 = [1], n = 1
+输出：[1]
+解释：需要合并的数组是 [] 和 [1] 。
+合并结果是 [1] 。
+注意，因为 m = 0 ，所以 nums1 中没有元素。nums1 中仅存的 0 仅仅是为了确保合并结果可以顺利存放到 nums1 中。
+'''
+def merge2(nums1, m: int, nums2, n: int) -> None:
+    # i = m
+    # j = 0
+    # while i< m+n:
+    #     if j < n:
+    #         nums1[i] = nums2[j]
+    #         i += 1
+    #         j += 1
+    # nums1.sort()
+    # print(nums1)
+    # nums1[m:] = nums2
+    # nums1.sort()
+    # print(nums1)
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
-    for i in range(1,10):
-        print(i)
+    list1 = [1,5,7,34,78,98]
+    print(id(list1[0]))
+    print(id(list1[1]))
+    print(id(list1[2]))
+    print(id(list1[3]))
+
+
+
+
+
+
+
+
+
+
+
+
 
 

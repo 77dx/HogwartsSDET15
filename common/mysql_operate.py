@@ -41,6 +41,7 @@ class MysqlOperate:
         self.__conn_mysql()
         self.cursor.execute(sql)
         query_data = self.cursor.fetchall()
+        print(query_data)
         if query_data ==():
             query_data = None
             print(f"{sql}查询结果为空")
@@ -48,10 +49,9 @@ class MysqlOperate:
         return query_data
 
 
-
-
 if __name__ == '__main__':
-    print(MysqlOperate().query("select * from auto_test_user"))
+    import random
+    print(MysqlOperate().query('UPDATE student SET birthday="%s-%s-%s" WHERE birthday="1999-09-09";' %(random.randint(1980,2000),random.randint(1,12),random.randint(1,30))))
 
 
 

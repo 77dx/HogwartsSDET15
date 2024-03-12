@@ -7,7 +7,7 @@ pre_url: "https://test-wanshifu.com"
 
 # mysql
 mysql:
-  db: testcase_manager
+  db: mydb
   host: rm-bp1826c80crnvve16do.mysql.rds.aliyuncs.com
   port: 3306
   user: cathy
@@ -18,6 +18,8 @@ redis:
   db: 0
   host: 47.119.25.235
   port: 6379
+
+#  STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
 
 
 
