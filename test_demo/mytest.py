@@ -266,10 +266,59 @@ def merge2(nums1, m: int, nums2, n: int) -> None:
     # print(nums1)
     pass
 
+from time import sleep
+from threading import Thread
+class Thread_Test(Thread):
+
+    def print_A(self):
+        print("A")
+
+    def print_B(self):
+        print("B")
+
+    def run(self):
+        t1 = Thread(target=self.print_A)
+        t2 = Thread(target=self.print_B)
+        while True:
+            t1.start()
+            sleep(1)
+            t2.start()
 
 
 
 
+a = 20
+class Test01:
+
+    def printa(self):
+        b = 30
+        def printb():
+            print(b)
+        return printb()
+
+
+def recursion(num):
+    if num > 9:
+        recursion(num // 10)
+    print(num % 10)
+
+# python的递归深度为998
+def recursion2(n):
+    if n < 998:
+        recursion2(n + 1)
+
+
+def str_len(s):
+    print(s[:-1])
+
+def bubble_sort():
+    list_ = [9,8,7,6,5,4,3,2,1,0]
+    l = len(list_)
+    for i in range(l-1):
+        for j in range(l-i-1):
+            if list_[j]>list_[j+1]:
+                list_[j],list_[j+1] = list_[j+1],list_[j]
+    return list_
 
 
 
@@ -278,12 +327,15 @@ def merge2(nums1, m: int, nums2, n: int) -> None:
 
 
 if __name__ == '__main__':
-    list1 = [1,5,7,34,78,98]
-    print(id(list1[0]))
-    print(id(list1[1]))
-    print(id(list1[2]))
-    print(id(list1[3]))
-
+    # recursion2(1)
+    # s = 'jane'
+    # str_len(s)
+    # n = False
+    # if range(0):
+    #     print(2)
+    # s = 'hhhahhahah'
+    # print(len(s))
+    print(bubble_sort())
 
 
 

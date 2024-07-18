@@ -47,8 +47,12 @@ class A:
         print(self.a + 10)
 
 
-A().foo()
+# A().foo()
 
+list1 = [1,4,5,7]
+print(list1[2:8])
 
+ssss = 'dhuihfduhw'
+print(ssss[2:5])
 
 
